@@ -1,28 +1,118 @@
-
 ````markdown
 # ⚡ Velox
 
-> A fast, real-time AI chatbot powered by Groq, LangChain, and Streamlit.
+> A fast AI-powered search agent built with LangChain, Groq, Google Serper, and Streamlit.
 
-Velox is an AI-powered conversational chatbot designed for fast and interactive responses. It uses **Groq's high-speed inference** with **LangChain** for LLM integration and **Streamlit** for the chat interface.
+Velox is an AI agent that combines the high-speed inference of Groq with Google Search capabilities through the Serper API. The agent can determine when external information is required, use the search tool to retrieve relevant results, and generate a natural-language response through an interactive Streamlit interface.
 
 ## ✨ Features
 
-- ⚡ Fast AI responses using Groq
-- 💬 Interactive chat interface with Streamlit
+- ⚡ High-speed inference with Groq
+- 🤖 LangChain AI agent
+- 🔎 Google Search using Serper API
+- 🧠 Agent-based tool calling
 - 🔄 Real-time streaming responses
-- 🧠 Conversation history
-- 🔗 LangChain-powered LLM integration
+- 💬 Interactive Streamlit chat interface
+- 📝 Conversation history
 - 🔐 Environment-based API key management
-- 🖥️ Simple and lightweight UI
 
 ## 🛠️ Tech Stack
 
 - **Python**
 - **LangChain**
 - **Groq**
+- **Google Serper API**
 - **Streamlit**
 - **python-dotenv**
+
+## 🧠 How Velox Works
+
+```text
+                User Query
+                    │
+                    ▼
+              ┌───────────┐
+              │   Velox   │
+              │ AI Agent  │
+              └─────┬─────┘
+                    │
+             ┌──────┴──────┐
+             │             │
+        Direct Answer   Needs Search?
+             │             │
+             │            YES
+             │             ▼
+             │       Google Serper
+             │          Search
+             │             │
+             │             ▼
+             │       Search Results
+             │             │
+             └──────┬──────┘
+                    ▼
+                Groq LLM
+                    │
+                    ▼
+            Streaming Response
+                    │
+                    ▼
+              Streamlit UI
+````
+
+## 🔧 Tools
+
+### Google Search
+
+Velox uses the Google Serper API through LangChain to provide the agent with web-search capabilities.
+
+This allows the agent to retrieve information that may be:
+
+* Current or time-sensitive
+* Not available in the model's knowledge
+* Requiring external sources
+* Related to recent events or updates
+
+## 🚀 Getting Started
+
+### 1. Clone the repository
+
+```bash
+git clone https://github.com/your-username/velox.git
+cd velox
+```
+
+### 2. Create a virtual environment
+
+```bash
+python -m venv venv
+```
+
+Activate it on Windows:
+
+```bash
+venv\Scripts\activate
+```
+
+### 3. Install dependencies
+
+```bash
+pip install -r requirements.txt
+```
+
+### 4. Configure environment variables
+
+Create a `.env` file:
+
+```env
+GROQ_API_KEY=your_groq_api_key
+SERPER_API_KEY=your_serper_api_key
+```
+
+### 5. Run the application
+
+```bash
+streamlit run app.py
+```
 
 ## 📁 Project Structure
 
@@ -34,106 +124,33 @@ Velox/
 ├── .env
 ├── .gitignore
 └── README.md
-````
-
-## 🚀 Getting Started
-
-### 1. Clone the repository
-
-```bash
-git clone https://github.com/shirshanag/velox.git
-cd velox
 ```
 
-### 2. Create a virtual environment
+## 🎯 Project Purpose
 
-```bash
-python -m venv venv
-```
+Velox was developed to explore how modern AI agents can combine an LLM with external tools to overcome the limitations of relying solely on model knowledge.
 
-Activate it:
+The project demonstrates:
 
-**Windows**
-
-```bash
-venv\Scripts\activate
-```
-
-**Linux/macOS**
-
-```bash
-source venv/bin/activate
-```
-
-### 3. Install dependencies
-
-```bash
-pip install -r requirements.txt
-```
-
-### 4. Configure the API key
-
-Create a `.env` file:
-
-```env
-GROQ_API_KEY=your_api_key_here
-```
-
-Never commit your `.env` file to GitHub.
-
-### 5. Run Velox
-
-```bash
-streamlit run qna-bot-groq.py
-```
-
-The application will open in your browser.
-
-## 🔄 How It Works
-
-```text
-User Input
-    ↓
-Streamlit Chat Interface
-    ↓
-LangChain
-    ↓
-Groq LLM
-    ↓
-Streaming Response
-    ↓
-Real-Time UI
-    ↓
-Conversation History
-```
-
-Velox receives the user's message, sends it through LangChain to the Groq-powered LLM, and streams the generated response back to the Streamlit interface.
-
-## 🎯 Purpose
-
-Velox was built to explore the development of modern LLM applications, including:
-
-* LLM API integration
-* LangChain workflows
+* LLM integration
+* AI agent architecture
+* Tool calling
+* Web search integration
 * Streaming responses
-* Conversational memory
-* Interactive AI interfaces
+* Conversational interfaces
 
 ## 🔮 Future Improvements
 
-* [ ] Persistent conversation storage
-* [ ] Multiple model selection
-* [ ] Tool calling and AI agents
-* [ ] RAG support
-* [ ] File/document interaction
+* [ ] Multi-tool agent
+* [ ] RAG integration
+* [ ] Persistent conversation memory
+* [ ] Source citations
+* [ ] Multiple LLM/model selection
 * [ ] Authentication
-* [ ] Deployment
+* [ ] Cloud deployment
 
 ## 📄 License
 
-This project is open-source and available under the MIT License.
+This project is licensed under the MIT License.
 
-```
 
-**One suggestion:** if your current Velox code already uses an **agent and tools**, tell me what tools you added, and I can make this README accurately describe it as an **AI agent** rather than just a chatbot.
-```
