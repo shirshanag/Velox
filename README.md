@@ -18,16 +18,17 @@ Velox is an AI agent that combines the high-speed inference of Groq with Google 
 
 ## 🛠️ Tech Stack
 
-- **Python**
-- **LangChain**
-- **Groq**
-- **Google Serper API**
-- **Streamlit**
-- **python-dotenv**
+- Python
+- LangChain
+- Groq
+- Google Serper API
+- Streamlit
+- python-dotenv
 
+````
 ## 🧠 How Velox Works
 
-```text
+
                 User Query
                     │
                     ▼
@@ -57,7 +58,7 @@ Velox is an AI agent that combines the high-speed inference of Groq with Google 
                     │
                     ▼
               Streamlit UI
-````
+
 
 ## 🔧 Tools
 
