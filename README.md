@@ -77,7 +77,7 @@ This allows the agent to retrieve information that may be:
 ### 1. Clone the repository
 
 ```bash
-git clone https://github.com/your-username/velox.git
+git clone https://github.com/shirshanag/velox.git
 cd velox
 ```
 
@@ -111,7 +111,7 @@ SERPER_API_KEY=your_serper_api_key
 ### 5. Run the application
 
 ```bash
-streamlit run app.py
+streamlit run qna-bot-groq.py
 ```
 
 ## 📁 Project Structure
